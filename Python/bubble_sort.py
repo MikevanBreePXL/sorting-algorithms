@@ -4,13 +4,11 @@ from check_list_sorted import checkListSort
 # NOT REALISTIC / INEFFICIENT
 
 def bubble_sort(list1):
-    print('\033[93m' + "WARNING: this is not the actual (famous) bubble sort as of now, and it is very VERY inefficient in sorting the list, but it will sort it.")
-    print("- Use at own risk of time loss." + '\033[0m')
-
     is_sorted = False
     i = 1
     j = 0
     total_comparisons = 0
+    list_loops = 1
     while is_sorted == False:
         # check if swap needed
         if list1[i] > list1[j]:
@@ -24,10 +22,11 @@ def bubble_sort(list1):
         is_sorted = checkListSort(list1)
 
         # if not: next bubble
-        if i == len(list1)-1:
+        if i == len(list1) - list_loops:
             # if iterators are at the end of the list, loop back around (first bubble)
             i = 1
             j = 0
+            list_loops += 1
         else:
             # increment iterators by 1 (next bubble)
             i += 1
