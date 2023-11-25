@@ -1,6 +1,7 @@
 from  check_list_sorted import checkListSort
 # merge sort (recursive)
 
+# function to split the list in 2 halfs
 def split_list(list):
     half = len(list)//2
     return list[half:], list[:half]
@@ -41,8 +42,3 @@ def merge_sort(merge_list1, merge_list2):
 
     # return the merged list
     return result_list
-
-list1 = [5, 7, 3]
-list2 = [1, 9, 2]
-merged_list = merge_sort(list1, list2)
-print(f"{merged_list}       sorted: {checkListSort(merged_list)}")
