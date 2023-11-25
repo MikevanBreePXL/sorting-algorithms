@@ -20,7 +20,7 @@ def bubble_sort(sort_list):
         total_comparisons += 1
 
         #check if sorted
-        #debug/verbose: print(f"Sorted? {checkListSort(sort_list)}")
+        #debug/verbose: print(f"Sorted? {checkListSort(sort_list)}\n{sort_list}")
         is_sorted = checkListSort(sort_list)
 
         # if not: next bubble
