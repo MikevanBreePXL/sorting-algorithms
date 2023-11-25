@@ -44,12 +44,12 @@ def merge_sort(input_list1, input_list2, direction="ascending"):
             case "descending":
                 comparison_counter += 1
                 if (merge_list1[0] > merge_list2[0]):
-                    #debug/verbose: print(f"Adding [{merge_list1[0]}] over [{merge_list2[0]}]")
                     result_list.append(merge_list1[0])
+                    #debug/verbose: print(f"Adding [{merge_list1[0]}] over [{merge_list2[0]}] => {result_list}")
                     merge_list1.pop(0)
                 else:
-                    #debug/verbose: print(f"Adding [{merge_list2[0]}] over [{merge_list1[0]}]")
                     result_list.append(merge_list2[0])
+                    #debug/verbose: print(f"Adding [{merge_list2[0]}] over [{merge_list1[0]}] => {result_list}")
                     merge_list2.pop(0)
             case _:
                 error = ValueError()
