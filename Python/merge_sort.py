@@ -7,7 +7,9 @@ def split_list(list):
     #debug/verbose: print(f"Splitting {list} in half => {list[half:]} & {list[:half]}")
     return list[half:], list[:half]
 
-def merge_sort(merge_list1, merge_list2, direction="ascending"):
+def merge_sort(input_list1, input_list2, direction="ascending"):
+    merge_list1 = input_list1.copy()
+    merge_list2 = input_list2.copy()
     comparison_counter = 0
 
     # check and split until sequence size 1 and work back up the stack (recursive)
@@ -69,5 +71,5 @@ def merge_sort(merge_list1, merge_list2, direction="ascending"):
             result_list.append(merge_list2[i])
 
     # return the merged list
-    #debug/verbose: print(f"Merged lists: {merge_list1} & {merge_list2}\n=> {result_list}")
+    #debug/verbose: print(f"Merged lists: {input_list1} & {input_list2}\n=> {result_list}")
     return result_list, comparison_counter
