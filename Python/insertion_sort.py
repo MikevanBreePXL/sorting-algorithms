@@ -4,7 +4,7 @@ from check_list_sorted import checkListSort
 
 def insertion_sort(given_list):
     insertion_list = [given_list[0]]        # take the first element as first result item
-    comparion_counter = 0                   # used to count the amount of comparisons taken
+    comparison_counter = 0                   # used to count the amount of comparisons taken
 
     # go through the list for all other values
     for originalIndex in range(1, len(given_list)):
@@ -17,7 +17,7 @@ def insertion_sort(given_list):
                 insertion_list.insert(insertionIndex, given_list[originalIndex])
                 triggered = True
                 break
-            comparion_counter += 1
+            comparison_counter += 1
 
         # if element hasn't been put in at the end: put it last
         if triggered == False:
@@ -25,12 +25,4 @@ def insertion_sort(given_list):
 
     # end of for loop of original list means the list is sorted
     # returns the list AND a number for the amount of comparisons spent
-    return insertion_list, comparion_counter
-
-
-# test the function
-elements_list = [7, 18, 19, 8, 9, 10, 0, 12, 13, 1, 2, 6, 11, 14, 15, 16, 3, 4, 5, 17, 20]
-result_list, comparisons = insertion_sort(elements_list)
-print(result_list)
-print(f"comparisons: {comparisons}")
-print(f"sorted: {checkListSort(result_list)}")
+    return insertion_list, comparison_counter
