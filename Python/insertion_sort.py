@@ -2,7 +2,10 @@ import time
 from check_list_sorted import checkListSort
 # insertion sort
 
-def insertion_sort(given_list):
+def insertion_sort(given_list, direction = "ascending"):
+    if direction.lower()[0:4] != "desc" and direction.lower()[0:3] != "asc":
+        raise Exception('direction needs to be default, "ascending" or "descending", your value: ' + direction)
+
     insertion_list = [given_list[0]]        # take the first element as first result item
     comparison_counter = 0                   # used to count the amount of comparisons taken
 
@@ -27,5 +30,9 @@ def insertion_sort(given_list):
             insertion_list.append(given_list[given_list_index])
 
     # end of for loop of original list means the list is sorted
+
+    if direction.lower()[0:4] == "desc":
+        insertion_list = insertion_list.reverse()
+
     # returns the list AND a number for the amount of comparisons spent
     return insertion_list, comparison_counter
