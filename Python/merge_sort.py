@@ -4,6 +4,7 @@ from  check_list_sorted import checkListSort
 # function to split the list in 2 halfs
 def split_list(list):
     half = len(list)//2
+    #debug/verbose: print(f"Splitting {list} in half => {list[half:]} & {list[:half]}")
     return list[half:], list[:half]
 
 def merge_sort(merge_list1, merge_list2, direction="ascending"):
@@ -68,4 +69,5 @@ def merge_sort(merge_list1, merge_list2, direction="ascending"):
             result_list.append(merge_list2[i])
 
     # return the merged list
+    #debug/verbose: print(f"Merged lists: {merge_list1} & {merge_list2}\n=> {result_list}")
     return result_list, comparison_counter
