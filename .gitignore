@@ -1,3 +1,13 @@
 Python/__pycache__
 .idea
 local_config.txt
+
+# Java
+Java/*
+!Java/SortingAlgorithmsJava
+Java/SortingAlgorithmsJava/*
+!Java/SortingAlgorithmsJava/src
+Java/SortingAlgorithmsJava/src/*
+!Java/SortingAlgorithmsJava/src/main
+Java/SortingAlgorithmsJava/src/main/*
+!Java/SortingAlgorithmsJava/src/main/java
