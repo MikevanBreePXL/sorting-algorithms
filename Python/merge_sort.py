@@ -29,18 +29,22 @@ def merge_sort(merge_list1, merge_list2, direction="ascending"):
             case "ascending":
                 comparison_counter += 1
                 if (merge_list1[0] < merge_list2[0]):
+                    # debug/verbose: print(f"Adding [{merge_list1[0]}] over [{merge_list2[0]}]")
                     result_list.append(merge_list1[0])
                     merge_list1.pop(0)
                 else:
+                    # debug/verbose: print(f"Adding [{merge_list2[0]}] over [{merge_list1[0]}]")
                     result_list.append(merge_list2[0])
                     merge_list2.pop(0)
                 
             case "descending":
                 comparison_counter += 1
                 if (merge_list1[0] > merge_list2[0]):
+                    # debug/verbose: print(f"Adding [{merge_list1[0]}] over [{merge_list2[0]}]")
                     result_list.append(merge_list1[0])
                     merge_list1.pop(0)
                 else:
+                    # debug/verbose: print(f"Adding [{merge_list2[0]}] over [{merge_list1[0]}]")
                     result_list.append(merge_list2[0])
                     merge_list2.pop(0)
             case _:
@@ -50,14 +54,17 @@ def merge_sort(merge_list1, merge_list2, direction="ascending"):
 
         # if some list is empty (range takes longest size), end the for loop
         if len(merge_list1) == 0 or len(merge_list2) == 0:
+            # debug/verbose: print("Empty list! appending the other to the end")
             break
     
     # append the list that's not empty yet
     if len(merge_list1) > 0:
         for i in range(len(merge_list1)):
+            #debug/verbose: print(f"Adding [{merge_list1[i]}]")
             result_list.append(merge_list1[i])
     elif len(merge_list2) > 0:
         for i in range(len(merge_list2)):
+            #debug/verbose: print(f"Adding [{merge_list2[i]}]")
             result_list.append(merge_list2[i])
 
     # return the merged list
