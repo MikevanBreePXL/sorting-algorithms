@@ -23,10 +23,11 @@ def merge_sort(input_list1, input_list2, direction="ascending"):
         comparison_counter += comparisons_done
 
     # logic part
+    #debug/verbose: print(f"Merging {merge_list1} & {merge_list2} next")
     range_size = max(len(merge_list1), len(merge_list2))
     result_list = []
-    # go through all elements, i not used
-    for i in range(range_size):
+    # continue until a list is empty
+    while True:
         # take lowest element and put it in the result list
         match direction:
             case "ascending":
@@ -55,7 +56,7 @@ def merge_sort(input_list1, input_list2, direction="ascending"):
                 error.add_note('direction needs to be empty, "ascending" or "descending"')
                 raise error
 
-        # if some list is empty (range takes longest size), end the for loop
+        # if some list is empty (range takes longest size), end the loop
         if len(merge_list1) == 0 or len(merge_list2) == 0:
             #debug/verbose: print("Empty list! appending the other to the end")
             break
@@ -63,13 +64,13 @@ def merge_sort(input_list1, input_list2, direction="ascending"):
     # append the list that's not empty yet
     if len(merge_list1) > 0:
         for i in range(len(merge_list1)):
-            #debug/verbose: print(f"Adding [{merge_list1[i]}]")
+            #debug/verbose: print(f"Appending [{merge_list1[i]}]")
             result_list.append(merge_list1[i])
-    elif len(merge_list2) > 0:
+    if len(merge_list2) > 0:
         for i in range(len(merge_list2)):
-            #debug/verbose: print(f"Adding [{merge_list2[i]}]")
+            #debug/verbose: print(f"Appending [{merge_list2[i]}]")
             result_list.append(merge_list2[i])
 
     # return the merged list
-    #debug/verbose: print(f"Merged lists: {input_list1} & {input_list2}\n=> {result_list}")
+    #debug/verbose: print(f"Merged lists: {input_list1} & {input_list2}\n=> {result_list}\n---")
     return result_list, comparison_counter
