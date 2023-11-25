@@ -60,11 +60,11 @@ def merge_sort(merge_list1, merge_list2, direction="ascending"):
     # append the list that's not empty yet
     if len(merge_list1) > 0:
         for i in range(len(merge_list1)):
-            print(f"Adding [{merge_list1[i]}]")
+            #debug/verbose: print(f"Adding [{merge_list1[i]}]")
             result_list.append(merge_list1[i])
     elif len(merge_list2) > 0:
         for i in range(len(merge_list2)):
-            print(f"Adding [{merge_list2[i]}]")
+            #debug/verbose: print(f"Adding [{merge_list2[i]}]")
             result_list.append(merge_list2[i])
 
     # return the merged list
