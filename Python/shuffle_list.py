@@ -17,8 +17,3 @@ def shuffle_fischer_yates(list):
         result_list.append(list[random.randint(0, len(list)-1)])
     
     return result_list
-
-sorted_list = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-
-print(shuffle_naive(sorted_list))
-print(shuffle_fischer_yates(sorted_list))
