@@ -7,21 +7,24 @@ def insertion_sort(given_list):
     comparison_counter = 0                   # used to count the amount of comparisons taken
 
     # go through the list for all other values
-    for originalIndex in range(1, len(given_list)):
+    for given_list_index in range(1, len(given_list)):
         triggered = False   # variable for if the current element needs to be last
         
         # compare with elements in the result list
-        for insertionIndex in range(len(insertion_list)):
+        for insertion_index in range(len(insertion_list)):
             # insert it in place (right before the first lower value found => descending order sort)
-            if given_list[originalIndex] > insertion_list[insertionIndex]:
-                insertion_list.insert(insertionIndex, given_list[originalIndex])
+            #debug/verbose: print(f"Compare: [{given_list[given_list_index]}](input element) & [{insertion_list[insertion_index]}](inserted element)")
+            if given_list[given_list_index] > insertion_list[insertion_index]:
+                #debug/verbose: print(f"Adding [{given_list[given_list_index]}] before [{insertion_list[insertion_index]}]")
+                insertion_list.insert(insertion_index, given_list[given_list_index])
                 triggered = True
                 break
             comparison_counter += 1
 
         # if element hasn't been put in at the end: put it last
         if triggered == False:
-            insertion_list.append(given_list[originalIndex])
+            #debug/verbose: print(f"Adding [{given_list[given_list_index]}] to the end")
+            insertion_list.append(given_list[given_list_index])
 
     # end of for loop of original list means the list is sorted
     # returns the list AND a number for the amount of comparisons spent
