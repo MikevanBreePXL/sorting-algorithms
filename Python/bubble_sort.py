@@ -1,7 +1,6 @@
 import time
 from check_list_sorted import checkListSort
 # bubble sort
-# NOT REALISTIC / INEFFICIENT
 
 def bubble_sort(list1):
     is_sorted = False
@@ -33,11 +32,3 @@ def bubble_sort(list1):
             j += 1
     # if sorted: return the sorted list
     return list1, total_comparisons
-
-
-
-elements = [7, 18, 19, 8, 9, 10, 0, 12, 13, 1, 2, 6, 11, 14, 15, 16, 3, 4, 5, 17, 20]
-sorted_list, comparisons = bubble_sort(elements)
-print(sorted_list)
-print(f"sorted: {checkListSort(sorted_list)}")
-print(f"comparisons: {comparisons}")
