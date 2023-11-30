@@ -4,7 +4,7 @@ from check_list_sorted import checkListSort
 
 def insertion_sort(given_list, direction = "ascending"):
     if direction.lower()[0:4] != "desc" and direction.lower()[0:3] != "asc":
-        raise Exception('direction needs to be default, "ascending" or "descending", your value: ' + direction)
+        raise Exception('direction needs to be default, "asc(ending)" or "desc(ending)", your value: ' + direction)
 
     insertion_list = [given_list[0]]        # take the first element as first result item
     comparison_counter = 0                   # used to count the amount of comparisons taken
