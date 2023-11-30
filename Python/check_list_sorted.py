@@ -3,19 +3,18 @@
 # returns False if not
 def checkListSort(list, direction = "ascending"):
     j = 0
-    match direction:
-        case "ascending":
+    match direction[0:3]:
+        case "asc":
             for i in range(1, len(list)):
                 if list[i] < list[j]:
                     return False
                 j += 1
             return True
-        case "descending":
+        case "des":
             for i in range(1, len(list)):
                 if list[i] > list[j]:
                     return False
                 j += 1
             return True
         case _:
-            error = ValueError
-            error.add_note('direction needs to be default, "ascending" or "descending"')
+            raise Exception('direction needs to be default, \"asc(ending)\" or \"des(cending)\"')
