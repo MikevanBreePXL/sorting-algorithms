@@ -3,7 +3,7 @@ from  check_list_sorted import checkListSort
 
 def merge_sort(input_list, direction="ascending"):
     if direction.lower()[0:4] != "desc" and direction.lower()[0:3] != "asc":
-        raise Exception('direction should be default, "asc(ending)" or "(desc)ending", your value: ' + direction)
+        raise Exception('direction should be default, "asc(ending)" or "desc(ending)", your value: ' + direction)
 
     half = len(input_list)//2
     input_half1 = input_list[:half]

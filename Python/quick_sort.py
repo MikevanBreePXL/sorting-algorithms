@@ -2,7 +2,7 @@ import random
 
 def quick_sort_pivot_last(unsorted_list, sort_order="ascending"):
     if sort_order.lower()[0:4] != "desc" and sort_order.lower()[0:3] != "asc":
-        raise Exception('direction should be default, "asc(ending)" or "(desc)ending", your value: ' + sort_order)
+        raise Exception('direction should be default, "asc(ending)" or "desc(ending)", your value: ' + sort_order)
     
     if len(unsorted_list) < 2:
         return unsorted_list, 0
