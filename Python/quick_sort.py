@@ -1,6 +1,9 @@
 import random
 
-def quick_sort_pivot_last(unsorted_list):
+def quick_sort_pivot_last(unsorted_list, sort_order="ascending"):
+    if sort_order.lower()[0:4] != "desc" and sort_order.lower()[0:3] != "asc":
+        raise Exception('direction should be default, "asc(ending)" or "(desc)ending", your value: ' + sort_order)
+    
     if len(unsorted_list) < 2:
         return unsorted_list, 0
     #debug/verbose: print(f"Going to quick sort list: {unsorted_list}")
@@ -34,14 +37,26 @@ def quick_sort_pivot_last(unsorted_list):
     #debug/verbose: print(f"- part 2: {unsorted_list[pivot_index + 1:]}")
     #debug/verbose: print(f"New list: {unsorted_list}")
     result_list = []
-    added_list, added_comparisons = quick_sort_pivot_last(unsorted_list[:pivot_index])
-    result_list.extend(added_list)
-    comparison_counter += added_comparisons
+    
+    if sort_order[0:4] == "desc":
+        added_list, added_comparisons = quick_sort_pivot_last(unsorted_list[pivot_index + 1:], sort_order)
+        result_list.extend(added_list)
+        comparison_counter += added_comparisons
 
-    result_list.append(unsorted_list[pivot_index])
+        result_list.append(unsorted_list[pivot_index])
+        
+        added_list, added_comparisons = quick_sort_pivot_last(unsorted_list[:pivot_index], sort_order)
+        result_list.extend(added_list)
+        comparison_counter += added_comparisons
+    else:
+        added_list, added_comparisons = quick_sort_pivot_last(unsorted_list[:pivot_index], sort_order)
+        result_list.extend(added_list)
+        comparison_counter += added_comparisons
 
-    added_list, added_comparisons = quick_sort_pivot_last(unsorted_list[pivot_index + 1:])
-    result_list.extend(added_list)
-    comparison_counter += added_comparisons
+        result_list.append(unsorted_list[pivot_index])
+
+        added_list, added_comparisons = quick_sort_pivot_last(unsorted_list[pivot_index + 1:], sort_order)
+        result_list.extend(added_list)
+        comparison_counter += added_comparisons
 
     return result_list, comparison_counter
